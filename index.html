@@ -4,50 +4,56 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perun IPFS Browser</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      background: #111518;
-      color: #e0e6e9;
-      font-family: system-ui, sans-serif;
-    }
-    body { margin: 0; }
-    main {
-      max-inline-size: 68ch;
-      margin-inline: auto;
-      padding: clamp(2rem, 8vw, 6rem) clamp(1.25rem, 5vw, 3rem);
-      font-size: clamp(1rem, 0.94rem + 0.3vw, 1.15rem);
-      line-height: 1.75;
-      overflow-wrap: anywhere;
-    }
-    h1 {
-      margin: 0 0 1.5rem;
-      color: #f4f7f8;
-      font-size: clamp(2rem, 7vw, 4rem);
-      line-height: 1.08;
-      letter-spacing: -0.035em;
-    }
-    h1::before {
-      content: "";
-      display: block;
-      inline-size: 2.5rem;
-      block-size: 0.25rem;
-      margin-block-end: 1.25rem;
-      background: #65dfc1;
-    }
-    p { margin: 0 0 1em; }
-    strong { color: #f4f7f8; }
-    p:last-child {
-      margin-block-start: 2em;
-      padding-block-start: 1.25em;
-      border-block-start: 1px solid #3c494f;
-    }
-    p:last-child strong { color: #65dfc1; }
-  </style>
+  <link rel="icon" type="image/svg+xml" href="./perun.svg">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <main>
-    <h1>Perun IPFS Browser</h1>
+  <header class="site-header layout">
+    <a class="brand" href="./index.html">
+      <img src="./perun.svg" alt="" width="32" height="32">
+      <span>Perun IPFS Browser</span>
+    </a>
+    <div class="language-control" hidden>
+      <label for="language" class="visually-hidden">Language</label>
+      <select id="language">
+        <option value="en" lang="en">English</option>
+        <option value="ar" lang="ar">العربية</option>
+        <option value="arz" lang="arz">العربية المصرية</option>
+        <option value="bn" lang="bn">বাংলা</option>
+        <option value="de" lang="de">Deutsch</option>
+        <option value="es" lang="es">Español</option>
+        <option value="fr" lang="fr">Français</option>
+        <option value="ha" lang="ha">Hausa</option>
+        <option value="hi" lang="hi">हिन्दी</option>
+        <option value="id" lang="id">Bahasa Indonesia</option>
+        <option value="ja" lang="ja">日本語</option>
+        <option value="mr" lang="mr">मराठी</option>
+        <option value="pcm" lang="pcm">Naijá</option>
+        <option value="pl" lang="pl">Polski</option>
+        <option value="pt" lang="pt">Português</option>
+        <option value="ru" lang="ru">Русский</option>
+        <option value="sw" lang="sw">Kiswahili</option>
+        <option value="te" lang="te">తెలుగు</option>
+        <option value="ur" lang="ur">اردو</option>
+        <option value="vi" lang="vi">Tiếng Việt</option>
+        <option value="zh" lang="zh">中文</option>
+      </select>
+    </div>
+  </header>
+  <main class="layout">
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-copy">
+        <h1 id="title" lang="en" dir="ltr">Perun <span>IPFS Browser</span></h1>
+        <p id="tagline" class="tagline">The perfect browser for the day of the Apocalypse.</p>
+        <a class="download" href="https://github.com/pe-run/perun-ipfs-browser/releases/download/v0.15.5/ipfs-browser_0.15.5_amd64.deb">
+          <span id="download-label">Download browser</span>
+        </a>
+        <p class="package" dir="ltr">v0.15.5 <span aria-hidden="true">·</span> Linux amd64 <span aria-hidden="true">·</span> .deb <span aria-hidden="true">·</span> 133 MiB</p>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <img src="./perun.svg" alt="" width="340" height="340">
+      </div>
+    </section>
     <article id="manifesto">
       <p>Governments don’t like it when they can’t control you. That’s why it’s getting harder to find hardware and software that truly respect your privacy and don’t track your every move. Whenever an interesting solution gives users more independence, sooner or later it disappears or gets pushed to the margins.</p>
       <p>Take Skype, for example. It went from a peer-to-peer messenger to a centralized service and was eventually shut down altogether. Something similar happened to IPFS support in the Brave browser. It was a revolutionary feature that let you use the decentralized web without extra software. Unfortunately, it was removed (under pressure from Big Brother?). Of course, you can still set up IPFS access yourself, but most users either don’t know how or simply don’t want to spend the time.</p>
@@ -238,22 +244,6 @@
     <p><strong>Perun IPFS Browser — burauzar da ta dace da ranar ƙarshen duniya.</strong> :)</p>
   </template>
 
-  <script>
-    const locale = (navigator.language || "en").toLowerCase();
-    const primaryLanguage = locale.split("-")[0];
-    const languageAliases = { cmn: "zh", arb: "ar", in: "id" };
-    const language = /^ar-eg(?:-|$)/.test(locale)
-      ? "arz"
-      : (languageAliases[primaryLanguage] ?? primaryLanguage);
-    const translation = document.getElementById(language);
-
-    if (translation instanceof HTMLTemplateElement) {
-      document.documentElement.lang = translation.id;
-      document.documentElement.dir = translation.getAttribute("dir") || "ltr";
-      document.getElementById("manifesto").replaceChildren(
-        translation.content.cloneNode(true)
-      );
-    }
-  </script>
+  <script src="./language.js"></script>
 </body>
 </html>
