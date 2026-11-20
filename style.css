@@ -183,12 +183,6 @@ article p:last-child {
 
 article p:last-child strong { color: var(--gold); }
 
-.author-address address {
-  color: var(--muted);
-  font-size: .875rem;
-  font-style: normal;
-}
-
 @media (max-width: 42rem) {
   .hero {
     grid-template-columns: minmax(0, 1fr);
