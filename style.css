@@ -193,3 +193,28 @@ article p:last-child strong { color: var(--gold); }
     width: min(65%, 14rem);
   }
 }
+
+.download-heading {
+  margin: 0 0 .6rem;
+  font-size: 1rem;
+}
+
+.downloads {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.project-details {
+  max-width: 68ch;
+  margin: 0 auto clamp(2.5rem, 7vw, 5rem);
+  border-block-start: 1px solid var(--line);
+  padding-block-start: 1.5rem;
+  color: #c4cfdd;
+  line-height: 1.7;
+  overflow-wrap: anywhere;
+}
+
+.project-details h2 { color: #f4f1e9; margin-block-start: 0; }
+.project-details a { color: var(--gold); }
+.stack-list { padding-inline-start: 1.25rem; }
