@@ -163,6 +163,16 @@ h1 span {
   filter: drop-shadow(0 0 1.5rem #3ca6ff45);
 }
 
+.browser-screenshot {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-block-start: clamp(1.25rem, 4vw, 2.5rem);
+  border: 1px solid var(--line);
+  border-radius: .75rem;
+  box-sizing: border-box;
+}
+
 article,
 .project-details {
   max-width: 68ch;
