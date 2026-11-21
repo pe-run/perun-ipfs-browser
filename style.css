@@ -163,14 +163,17 @@ h1 span {
   filter: drop-shadow(0 0 1.5rem #3ca6ff45);
 }
 
-article {
+article,
+.project-details {
   max-width: 68ch;
-  margin: clamp(2.5rem, 7vw, 5rem) auto;
+  margin-inline: auto;
   color: #c4cfdd;
   font-size: clamp(1rem, .95rem + .3vw, 1.15rem);
   line-height: 1.8;
   overflow-wrap: anywhere;
 }
+
+article { margin-block: clamp(2.5rem, 7vw, 5rem); }
 
 article p { margin: 0 0 1.2em; }
 article strong { color: #f4f1e9; }
@@ -206,15 +209,12 @@ article p:last-child strong { color: var(--gold); }
 }
 
 .project-details {
-  max-width: 68ch;
-  margin: 0 auto clamp(2.5rem, 7vw, 5rem);
+  margin-block-end: clamp(2.5rem, 7vw, 5rem);
   border-block-start: 1px solid var(--line);
   padding-block-start: 1.5rem;
-  color: #c4cfdd;
-  line-height: 1.7;
-  overflow-wrap: anywhere;
 }
 
-.project-details h2 { color: #f4f1e9; margin-block-start: 0; }
+.project-details h2 { color: #f4f1e9; font-size: inherit; margin-block-start: 0; }
+.project-details code { font: inherit; }
 .project-details a { color: var(--gold); }
-.stack-list { padding-inline-start: 1.25rem; }
+.stack-list { padding: 0; list-style: none; }

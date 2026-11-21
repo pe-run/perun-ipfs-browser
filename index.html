@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Perun IPFS Browser</title>
   <link rel="icon" type="image/svg+xml" href="./perun.svg">
-  <link rel="stylesheet" href="./style.css?v=0.17.10">
+  <link rel="stylesheet" href="./style.css?v=stack-layout">
 </head>
 <body>
   <header class="site-header layout">
@@ -78,8 +78,8 @@
 
     <section class="project-details" aria-labelledby="stack-heading">
       <h2 id="stack-heading">Technology and license</h2>
-      <ul class="stack-list">
-        <li>Node.js 24 LTS <span aria-hidden="true">·</span> npm (<code>package-lock.json</code>)</li>
+      <ul class="stack-list" role="list">
+        <li>Node.js 24 LTS <span aria-hidden="true">·</span> npm</li>
         <li>Electron 45 <span aria-hidden="true">·</span> Electron Forge 8 / Vite <span aria-hidden="true">·</span> TypeScript (<code>strict</code>)</li>
         <li>SQLite (<code>node:sqlite</code>, <span id="sqlite-label">built-in Node.js module</span>)</li>
         <li>Vitest <span aria-hidden="true">·</span> Playwright</li>
