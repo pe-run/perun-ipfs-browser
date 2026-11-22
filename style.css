@@ -167,7 +167,7 @@ h1 span {
   display: block;
   width: 100%;
   height: auto;
-  margin-block-start: clamp(1.25rem, 4vw, 2.5rem);
+  margin-block-end: clamp(1.25rem, 4vw, 2.5rem);
   border: 1px solid var(--line);
   border-radius: .75rem;
   box-sizing: border-box;
